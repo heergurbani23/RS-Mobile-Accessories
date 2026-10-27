@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+          <style>
+            
+/* ABOUT PAGE */
+body {
+    background-color: beige;
+    color: black;
+    line-height: 1.6;
+}
+header{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 15px 25px; */
+    
+}
+
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+a{
+    text-decoration: none;
+    color: #656b45;
+    font-weight: bold;
+}
+/* HERO SECTION */
+.hero {
+    background-color: #efe3ca;
+    color: #41452c;
+    text-align: center;
+    padding: 55px 6%;
+}
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero .container > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    background: #626744;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* SECTION STYLES */
+.story-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #626744;
+}
+
+/* STORY SECTION */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.story-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #77774d;
+}
+
+.story-text p {
+    margin-bottom: 15px;
+}
+
+.story-img {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.story-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* VALUES SECTION */
+.values {
+    background-color: #77774d;
+    color: white;
+    padding: 60px 0;
+}
+
+.values .section-title {
+    color: #f5f0e3;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.value-card {
+    background: #f5f0e3;
+    color: #41432e;
+    border: 1px solid #d8cba9;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.value-card i {
+    font-size: 30px;
+    margin-bottom: 12px;
+    color: #77774d;
+}
+
+.value-card h4 {
+    margin-bottom: 10px;
+    color: #626744;
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        padding: 35px 5%;
+    }
+
+    .hero .container > img {
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+    }
+
+    .hero .container > img {
+        height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .story-img {
+        height: 240px;
+    }
+
+    .value-card {
+        padding: 24px 18px;
+    }
+}
+header{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     background: #FAF7F0;
+    /* padding: 15px 25px; */
+    
+}
+header>h2{
+    color: #656b45;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+a{
+    text-decoration: none;
+    color: #656b45;
+    font-weight: bold;
+}
+
+          </style>
+</head>
+<body>
+
+    <!-- Navbar: Same as your other page -->
+    <header>
+        <h2>RS Mobiles & accessories</h2>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact-us.html">Contact-us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="assets/RS Mobile Accessories About Us Banner.png" alt="">
+            <h1>"Welcome To RS Mobiles Accessories"</h1>
+            <p>Your trusted destination for premium Mobile Accessories</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="container story-section">
+        <h2 class="section-title">Our Story</h2>
+
+        <div class="story-grid">
+            <div class="story-text">
+                <h3>Connecting You To What Matters.</h3>
+
+                <p>At RS Mobiles Accessories, we believe that technology makes life easier, smarter and more connected. Our journey began with a simple vision-to bring high quality, stylish, and affordable mobile accessories to everyone.</p>
+
+                <p>As technology continues  to evolve, we remain focused on discovering smarter essentials that keep you connected wherever life takes you.</p>
+
+                <p>RS Mobiles Accessories is not just about what you carry. It's about how you stay connected .</p>
+            </div>
+
+            <div class="story-img">
+                <img src="assets/about.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">What We Value</h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="far fa-user"></i>
+                    <h4>Customer First</h4>
+
+                    <p> Our customers inspire everything we do. We strive to understand theirr needs and deliver meaningful experiences through products that blend quality,convenience, and modern technology. </p>
+                </div>
+
+                <div class="value-card">
+                    <i class="far fa-handshake"></i>
+                    <h4>Trust &amp; Integrity</h4>
+
+                    <p>We value honest relationships and believe that trust built through transparency, consistency, and responsible business practices.</p>
+                </div>
+
+                <div class="value-card">
+                    <i class="fas fa-wallet"></i>
+                    <h4>Affordability</h4>
+
+                    <p>We aim to make modern mobile accessories accessible by offering options that balance quality, style, and value. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Same as your other page -->
+    <footer class="footer">
+        <h2>RS Mobile Accessories</h2>
+        <p>Style · Quality · Everyday</p>
+        <p>© 2026 RS Mobile Accessories. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

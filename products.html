@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+:root{
+    --olive: #414729;
+    --dark-olive: #292f1c;
+    --light-olive: #737852;
+    --beige: #e6d6b8;
+    --cream: #f8f2e6;
+    --white: #fffdf7;
+    --text: #25271c;
+    --muted: #777464;
+    --border: #e0d5c0;
+}
+
+.products-page,
+.products-page * {
+    box-sizing: border-box;
+}
+
+.products-page {
+    width: 100%;
+    overflow: hidden;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.products-page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.products-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.products-page button,
+.products-page input,
+.products-page select {
+    font: inherit;
+}
+
+.products-page h1,
+.products-page h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+}
+
+.products-page .eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin: 0 0 12px;
+}
+
+/* HERO */
+
+.product-hero {
+    min-height: 290px;
+    display: grid;
+    grid-template-columns: 43% 57%;
+    align-items: center;
+    background: var(--olive);
+    color: var(--cream);
+    position: relative;
+    padding: 35px 7%;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    padding: 10px 0;
+}
+
+.hero-copy h1 {
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.1;
+    margin: 0 0 10px;
+    letter-spacing: -1.5px;
+}
+
+.hero-copy h1::after {
+    content: ".";
+    color: var(--beige);
+}
+
+.handwritten {
+    color: var(--beige);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(17px, 2vw, 24px);
+    line-height: 1.25;
+    margin: 0 0 17px;
+    transform: rotate(-3deg);
+    transform-origin: left;
+}
+
+.hero-description {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 0 14px;
+    color: #f0eadb;
+}
+
+.hero-visual {
+    height: 245px;
+    position: relative;
+    min-width: 0;
+}
+
+.hero-visual img {
+    border-radius: 48% 0 0 40%;
+    mix-blend-mode: normal;
+}
+
+.hero-note {
+    position: absolute;
+    top: 15px;
+    right: -20px;
+    color: var(--olive);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    transform: rotate(7deg);
+    text-align: center;
+}
+
+.search-box {
+    width: min(100%, 340px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    height: 37px;
+    border-radius: 30px;
+    background: var(--cream);
+    color: var(--olive);
+}
+
+.search-box span {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.search-box input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 10px;
+    min-width: 0;
+}
+
+/* CATEGORY STRIP */
+
+.category-strip {
+    display: flex;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    /* gap: 100px; */
+    padding: 24px 5% 27px;
+    background: var(--cream);
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.category-strip a {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.category-strip a span {
+    width: 57px;
+    height: 57px;
+    border-radius: 22px;
+    background: #ede3cf;
+    display: grid;
+    place-items: center;
+    color: var(--olive);
+    font-size: 27px;
+    transition: .25s ease;
+}
+
+.category-strip a:hover span {
+    background: var(--olive);
+    color: var(--cream);
+    transform: translateY(-4px);
+}
+
+/* FEATURED COLLECTION */
+
+.featured-banner {
+    margin: 0 4.2% 26px;
+    min-height: 165px;
+    display: grid;
+    grid-template-columns: 44% 43% 13%;
+    align-items: center;
+    background: var(--olive);
+    color: var(--cream);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.featured-copy {
+    padding: 24px 20px 24px 7%;
+    z-index: 1;
+}
+
+.featured-copy .eyebrow {
+    margin-bottom: 6px;
+}
+
+.featured-copy h2 {
+    font-size: clamp(23px, 3vw, 34px);
+    line-height: 1.2;
+    margin: 0 0 5px;
+}
+
+.featured-copy > p:not(.eyebrow) {
+    color: var(--beige);
+    margin: 0 0 14px;
+    font-size: 13px;
+}
+
+.cream-button {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 21px;
+    background: var(--cream);
+    color: var(--dark-olive);
+    font-size: 10px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.cream-button:hover {
+    background: var(--beige);
+    transform: translateY(-2px);
+}
+
+.featured-image {
+    height: 165px;
+    overflow: hidden;
+    clip-path: ellipse(75% 100% at 50% 50%);
+}
+
+.featured-note {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    text-align: center;
+    color: var(--beige);
+    font-size: 17px;
+    line-height: 1.4;
+    transform: rotate(5deg);
+}
+
+/* PRODUCTS */
+
+.all-products {
+    padding: 0 7% 36px;
+}
+
+.products-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 23px;
+}
+
+.products-heading .eyebrow {
+    margin-bottom: 3px;
+}
+
+.products-heading h2 {
+    font-size: clamp(29px, 3vw, 37px);
+    line-height: 1.2;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.products-heading select {
+    width: 145px;
+    flex-shrink: 0;
+    border: 1px solid #d7c9ad;
+    border-radius: 30px;
+    background: transparent;
+    padding: 9px 12px;
+    font-size: 10px;
+    color: var(--text);
+    outline-color: var(--olive);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.product-card {
+    background: #fcf8ef;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 4px;
+    min-width: 0;
+    box-shadow: 0 3px 8px #39321a08;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.product-card[hidden] {
+    display: none !important;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #39321a12;
+}
+
+.product-photo {
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    background: #e9ddc6;
+    border-radius: 8px;
+}
+
+.product-photo img {
+    transition: transform .4s ease;
+}
+
+.product-card:hover .product-photo img {
+    transform: scale(1.05);
+}
+
+.discount {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    background: var(--olive);
+    color: var(--cream);
+    border-radius: 20px;
+    padding: 4px 9px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.heart {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background: #faf4e6;
+    color: var(--olive);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.heart.liked {
+    background: var(--olive);
+    color: white;
+}
+
+.product-info {
+    padding: 8px 7px 6px;
+}
+
+.category-label {
+    color: #77715f;
+    font-size: 9px;
+    margin: 0 0 2px;
+}
+
+.product-info h3 {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.variant {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0 0 3px;
+}
+
+.rating {
+    color: #a1843f;
+    font-size: 12px;
+    letter-spacing: -1px;
+    margin: 1px 0;
+    white-space: nowrap;
+}
+
+.rating small {
+    color: #5d594c;
+    font-size: 9px;
+    letter-spacing: 0;
+    margin-left: 4px;
+}
+
+.price {
+    color: #171810;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 3px 0 8px;
+    white-space: nowrap;
+}
+
+.price del {
+    color: #999180;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.cart-button {
+    width: 100%;
+    display: block;
+    background: var(--olive);
+    color: var(--cream);
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 4px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background .25s;
+}
+
+.cart-button:hover {
+    background: var(--dark-olive);
+}
+
+/* BENEFITS STRIP */
+
+.benefits {
+    display: grid;
+    grid-template-columns: 1.1fr repeat(4, 1fr);
+    align-items: center;
+    padding: 25px 5%;
+    background: #eee3ce;
+    gap: 0;
+}
+
+.benefit-title {
+    padding: 10px 15px 10px 20px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.benefit-title span {
+    color: var(--olive);
+}
+
+.benefit {
+    text-align: center;
+    padding: 10px 7px;
+    border-left: 1px solid #c9bea8;
+}
+
+.benefit > span {
+    font-size: 25px;
+    color: var(--olive);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.benefit h3 {
+    font-size: 11px;
+    margin: 0 0 4px;
+}
+
+.benefit p {
+    color: #706b5b;
+    font-size: 9px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* PROMOTIONAL BANNER */
+
+.closing-banner {
+    min-height: 175px;
+    display: grid;
+    grid-template-columns: 35% 52% 13%;
+    align-items: center;
+    background: var(--olive);
+    color: var(--cream);
+    overflow: hidden;
+}
+
+.closing-photo {
+    height: 175px;
+    overflow: hidden;
+    clip-path: ellipse(85% 100% at 15% 50%);
+}
+
+.closing-copy {
+    padding: 25px 15px;
+}
+
+.closing-copy .eyebrow {
+    margin-bottom: 5px;
+}
+
+.closing-copy h2 {
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.2;
+    margin: 0 0 7px;
+}
+
+.closing-copy > p:not(.eyebrow) {
+    font-size: 10px;
+    color: #e7e1d1;
+    margin: 0 0 14px;
+}
+
+.closing-note {
+    text-align: center;
+    color: var(--beige);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    transform: rotate(-8deg);
+}
+
+/* FOOTER ONLY — EXISTING NAVBAR UNCHANGED */
+
+.products-footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 7% 12px;
+    background: var(--dark-olive);
+    color: var(--cream);
+    border-top: 1px solid #ffffff20;
+}
+
+.footer-brand h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 38px;
+    line-height: 1;
+    margin: 0;
+}
+
+.footer-brand h2 span {
+    color: var(--beige);
+}
+
+.footer-brand p {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin: 2px 0 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav a {
+    font-size: 10px;
+    transition: color .2s;
+}
+
+.footer-nav a:hover {
+    color: var(--beige);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.footer-social a {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #cfc9b4;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.footer-social a:hover {
+    background: var(--beige);
+    color: var(--olive);
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #ffffff25;
+    padding-top: 12px;
+    color: #d7d4c6;
+    font-size: 9px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .product-hero {
+        padding: 30px 5%;
+        grid-template-columns: 48% 52%;
+    }
+
+    .hero-visual {
+        height: 220px;
+    }
+
+    .category-strip {
+        padding-left: 3%;
+        padding-right: 3%;
+        gap: 6px;
+    }
+
+    .category-strip a {
+        font-size: 9px;
+    }
+
+    .category-strip a span {
+        width: 48px;
+        height: 48px;
+    }
+
+    .all-products {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .product-grid {
+        gap: 12px;
+    }
+
+    .product-photo {
+        height: 130px;
+    }
+
+    .featured-banner {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .benefits {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .product-hero {
+        grid-template-columns: 1fr;
+        padding: 32px 6% 20px;
+        gap: 15px;
+    }
+
+    .hero-copy h1 {
+        font-size: 46px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .hero-visual {
+        height: 220px;
+    }
+
+    .hero-note {
+        right: 5px;
+        top: 5px;
+        font-size: 14px;
+    }
+
+    .category-strip {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px 6px;
+        padding: 22px 3%;
+    }
+
+    .category-strip a {
+        font-size: 9px;
+    }
+
+    .category-strip a span {
+        width: 45px;
+        height: 45px;
+        border-radius: 16px;
+        font-size: 22px;
+    }
+
+    .featured-banner {
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        min-height: 175px;
+        margin: 0 3% 25px;
+    }
+
+    .featured-copy {
+        padding: 20px 8px 20px 17px;
+    }
+
+    .featured-copy h2 {
+        font-size: 22px;
+    }
+
+    .featured-copy > p:not(.eyebrow) {
+        font-size: 10px;
+    }
+
+    .featured-image {
+        height: 175px;
+    }
+
+    .featured-note {
+        display: none;
+    }
+
+    .all-products {
+        padding: 0 3% 25px;
+    }
+
+    .products-heading {
+        align-items: end;
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .products-heading h2 {
+        font-size: 26px;
+        white-space: normal;
+    }
+
+    .products-heading select {
+        width: 125px;
+        padding: 8px;
+        font-size: 9px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .product-photo {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 7px 5px 5px;
+    }
+
+    .product-info h3 {
+        font-size: 11px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .price del {
+        font-size: 9px;
+        margin-left: 2px;
+    }
+
+    .rating {
+        font-size: 11px;
+    }
+
+    .rating small {
+        font-size: 8px;
+        margin-left: 2px;
+    }
+
+    .cart-button {
+        font-size: 9px;
+        padding: 9px 2px;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 18px 4%;
+    }
+
+    .benefit-title {
+        font-size: 23px;
+        padding: 15px 10px;
+    }
+
+    .benefit {
+        border-left: 1px solid #c9bea8;
+        min-height: 110px;
+    }
+
+    .benefit:last-child {
+        grid-column: 1 / -1;
+        border-top: 1px solid #c9bea8;
+    }
+
+    .closing-banner {
+        grid-template-columns: 36% 64%;
+        min-height: 190px;
+    }
+
+    .closing-photo {
+        height: 190px;
+    }
+
+    .closing-copy {
+        padding: 20px 12px;
+    }
+
+    .closing-copy h2 {
+        font-size: 22px;
+    }
+
+    .closing-note {
+        display: none;
+    }
+
+   
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>RS Mobiles & accessories</h2>
+        <nav>
+            <ul>
+                  <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact-us.html">Contact-us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<main class="products-page">
+
+    <!-- HERO -->
+    <section class="product-hero">
+        <div class="hero-copy">
+            <p class="eyebrow">RS MOBILE ACCESSORIES</p>
+            <h1>Our Products</h1>
+            <p class="handwritten">Small Accessories<br>Big Difference ♡</p>
+            <p class="hero-description">
+                Explore our wide range of premium mobile accessories
+                designed to keep you connected, stylish and always ahead.
+            </p>
+
+            <form class="search-box" onsubmit="event.preventDefault(); document.getElementById('all-products').scrollIntoView({behavior:'smooth'});">
+                <span>⌕</span>
+                <input type="search" placeholder="Search for your favourite accessory..."
+                       aria-label="Search products"
+                       oninput="document.querySelectorAll('.product-card').forEach(card => card.hidden = !card.innerText.toLowerCase().includes(this.value.toLowerCase()))">
+            </form>
+        </div>
+
+        <div class="hero-visual">
+            <img src="assets/Olive Green Tech Accessories Still Life.png"
+                 alt="Premium mobile accessories">
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="category-strip">
+        <a href="#cases"><span>▣</span>Phone Cases</a>
+        <a href="#cables"><span>♧</span>Chargers & Cables</a>
+        <a href="#earbuds"><span>◉</span>Earphones &<br> Headphones</a>
+        <a href="#power"><span>ϟ</span>Power Banks</a>
+        <a href="#all-products"><span>⊞</span>Other Accessories</a>
+    </section>
+
+    <!-- FEATURED COLLECTION -->
+    <section class="featured-banner">
+        <div class="featured-copy">
+            <p class="eyebrow">FEATURED COLLECTION</p>
+            <h2>Premium Phone Cases</h2>
+            <p>Style + Protection = Perfection</p>
+            <a href="#cases" class="cream-button">Shop Now  →</a>
+        </div>
+        <div class="featured-image">
+            <img src="assets/about.png"
+                 alt="Premium smartphone">
+        </div>
+        <p class="featured-note">Protect<br>Your Style ♡</p>
+    </section>
+
+    <!-- PRODUCT COLLECTION -->
+    <section class="all-products" id="all-products">
+        <div class="products-heading">
+            <div>
+                <p class="eyebrow">ALL PRODUCTS</p>
+                <h2>Shop By Category</h2>
+            </div>
+            <select aria-label="Sort products" onchange="sortProducts(this.value)">
+                <option value="default">Sort by: Popular</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+            </select>
+        </div>
+
+        <div class="product-grid">
+
+            <article class="product-card" id="cases" data-price="250">
+                <div class="product-photo">
+                    <button class="heart" aria-label="Add case to favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/cover1.png ">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Phone Cases</p>
+                    <h3>Diamond Case</h3>
+                    <p class="variant">(multi)</p>
+                    <p class="rating">★★★★★ <small>4.8 (124)</small></p>
+                    <p class="price">₹ 250<del>₹ 250</del></p>
+                    <button class="cart-button" onclick="enquire('Diamond Case')">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" id="screen" data-price="450">
+                <div class="product-photo">
+                    <button class="heart" aria-label="AdD Speaker favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/speaker2.png">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Speaker</p>
+                    <h3>Speaker</h3>
+                    <p class="variant">(Sound Speaker)</p>
+                    <p class="rating">★★★★★ <small>4.7 (98)</small></p>
+                    <p class="price">₹ 450 <del>₹ 450</del></p>
+                    <button class="cart-button" onclick="enquire('speaker')"> Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" id="cables" data-price="160">
+                <div class="product-photo">
+                    <button class="heart" aria-label="Add charging cable to favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/cable2.png" alt="Charging cable">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Charging Cables</p>
+                    <h3>Braided Cable</h3>
+                    <p class="variant">(Fast Charging)</p>
+                    <p class="rating">★★★★★ <small>4.9 (210)</small></p>
+                    <p class="price">₹ 160<del>₹160</del></p>
+                    <button class="cart-button" onclick="enquire('BraidedCable')"> Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" id="" data-price="1800">
+                <div class="product-photo">
+                    <button class="heart" aria-label="" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/power bank1.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Powerbank</p>
+                    <h3>Powerbank</h3>
+                    <p class="variant">(Powerbank)</p>
+                    <p class="rating">★★★★★ <small>4.6 (176)</small></p>
+                    <p class="price">₹1800 <del>₹ 1800</del></p>
+                    <button class="cart-button" onclick="enquire(' Fast Charging Powerbank')"> Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" id="power" data-price="450">
+                <div class="product-photo">
+                    <button class="heart" aria-label="Add power bank to favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/earbuds.png" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Earbuds</p>
+                    <h3>Premium sound</h3>
+                    <p class="variant">(10000mAh)</p>
+                    <p class="rating">★★★★★ <small>4.6 (145)</small></p>
+                    <p class="price">₹ 450 <del>₹ 450</del></p>
+                    <button class="cart-button" onclick="enquire('Auto Noise Cancellation')"> Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" id="stands" data-price="250">
+                <div class="product-photo">
+                    <button class="heart" aria-label="Add phone stand to favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/earphones.png" alt="Phone stand">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Earphones</p>
+                    <h3>Pure sound</h3>
+                    <p class="variant">(Foldable)</p>
+                    <p class="rating">★★★★★ <small>4.7 (92)</small></p>
+                    <p class="price">₹ 250 <del>₹ 250</del></p>
+                    <button class="cart-button" onclick="enquire('clear sound')">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="250">
+                <div class="product-photo">
+                    <button class="heart" aria-label="Add charger to favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/charger.png" alt="Wall charger">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Chargers</p>
+                    <h3>PD Fast Charger</h3>
+                    <p class="variant">(Type-C, 20W)</p>
+                    <p class="rating">★★★★★ <small>4.8 (118)</small></p>
+                    <p class="price">₹ 250 <del>₹ 250</del></p>
+                    <button class="cart-button" onclick="enquire('PD Fast Charger')"> Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="product-card" data-price="700">
+                <div class="product-photo">
+                    <button class="heart" aria-label="Add SMARTWATCH to favourites" onclick="this.classList.toggle('liked')">♡</button>
+                    <img src="assets/accessories/watch.png" alt="Mobile phone accessory">
+                </div>
+                <div class="product-info">
+                    <p class="category-label">Smart Watch</p>
+                    <h3>Time meets technology</h3>
+                    <p class="variant">(Olive Green)</p>
+                    <p class="rating">★★★★★ <small>4.5 (87)</small></p>
+                    <p class="price">₹ 700 <del>₹ 700</del></p>
+                    <button class="cart-button" onclick="enquire('SMARTWATCH')"> Add to Cart</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+        <div class="benefit-title">
+            <p>Why<br>Choose Us?</p>
+            <span>♥</span>
+        </div>
+        <div class="benefit">
+            <span>♢</span>
+            <h3>Premium Quality</h3>
+            <p>Only the best for<br>your device</p>
+        </div>
+        <div class="benefit">
+            <span>♧</span>
+            <h3>Fast & Reliable</h3>
+            <p>Quick delivery<br>across India</p>
+        </div>
+        <div class="benefit">
+            <span>♡</span>
+            <h3>Trendy Collection</h3>
+            <p>Latest styles &<br>trending accessories</p>
+        </div>
+        <div class="benefit">
+            <span>♧</span>
+            <h3>Friendly Support</h3>
+            <p>We're always<br>here to help</p>
+        </div>
+    </section>
+
+    <!-- PROMOTIONAL BANNER -->
+    <section class="closing-banner">
+        <div class="closing-photo">
+            <img src="assets/product page 3.png" alt="Mobile accessory collection">
+        </div>
+        <div class="closing-copy">
+            <p class="eyebrow">STAY CONNECTED</p>
+            <h2>Upgrade Your Mobile Experience</h2>
+            <p>Accessories that add style, protection and convenience to your everyday life.</p>
+            <a href="#all-products" class="cream-button">Explore All Products &nbsp; →</a>
+        </div>
+        <p class="closing-note">Good Vibes Only ♡</p>
+    </section>
+
+    
+</main>
+
+<script>
+    function sortProducts(order) {
+        const grid = document.querySelector('.product-grid');
+        const cards = [...grid.querySelectorAll('.product-card')];
+
+        cards.sort((a, b) => {
+            const priceA = Number(a.dataset.price);
+            const priceB = Number(b.dataset.price);
+
+            if (order === 'low') return priceA - priceB;
+            if (order === 'high') return priceB - priceA;
+            return 0;
+        });
+
+        cards.forEach(card => grid.appendChild(card));
+    }
+
+    function enquire(productName) {
+        const message = 'Hi, I am interested in ' + productName + '. Please share availability and details.';
+        window.location.href = 'contact.html?product=' + encodeURIComponent(productName);
+    }
+</script>
+<footer class="footer">
+    <h2>RS Mobile Accessories</h2>
+    <p>Style · Quality · Everyday</p>
+    <p>© 2026 RS Mobile Accessories. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
